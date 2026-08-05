@@ -24,7 +24,7 @@ Prefer capability detection over product-name branching. Product versions change
 | Need | Preferred route | Fallback | Release consequence if unavailable |
 |---|---|---|---|
 | Read PPTX | Host-native presentation or document skill | Parse OOXML with an available library | Mark unrecoverable content and notes |
-| Edit PPTX | Host-native slide editor | Code-based OOXML or presentation library | Deliver only outline/storyboard if no safe editor exists |
+| Edit PPTX | Host-native slide editor | Code-based OOXML or presentation library | Deliver only the approved `ppt-content-spec.md` if no safe editor exists |
 | Render slides | Host renderer | PowerPoint, LibreOffice, or macOS Quick Look where suitable | No PASS without full-deck visual review |
 | Search visuals | Host web/image search | Approved local asset library | Disclose reduced sourcing coverage |
 | Generate visuals | Host image generator | Editable diagrams, icons, or licensed local assets | Do not insert placeholders that imply evidence |
@@ -60,7 +60,7 @@ Prefer capability detection over product-name branching. Product versions change
 
 Continue with the highest-verifiable layer only:
 
-- content-only: requirement card, source map, outline, evidence map, and storyboard;
+- content-only: requirement card, source map, outline, evidence map, and `ppt-content-spec.md`;
 - design-ready: template recommendation, layout specification, typography profile, visual plan, and slide copy;
 - file draft: generated PPTX without complete rendering or reopen checks;
 - verified delivery: editable PPTX plus completed structural, rendering, content, font, source, privacy, and delivery checks.

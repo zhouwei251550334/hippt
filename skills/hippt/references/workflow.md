@@ -5,15 +5,15 @@
 Unless the user's request already makes the mode explicit, begin with this concise choice:
 
 > 开始前请选择制作模式：<br>
-> **标准模式（推荐）**：先确认大纲和逐页故事板，再选模板制作。<br>
-> **快速模式**：材料清晰时直接制作三页样稿，确认后完成整套。<br>
-> **忠实迁移**：不改变原始文字内容，仍从HiPPT资源库选择新模板制作。
+> **标准模式（推荐）**：先确认逐页内容说明，再选模板制作。<br>
+> **快速模式**：材料清晰时直接形成完整内容说明，确认后再选模板制作。<br>
+> **忠实迁移**：不改变原始内容，先形成逐页内容说明，确认后再迁移设计。
 
 If a structured user-choice UI is available, use it. Otherwise ask the same question in concise plain language. Do not add a long workflow explanation at this stage.
 
 Infer and proceed when the request is already explicit:
 
-- “直接做”“不用确认大纲” -> Fast mode;
+- “直接做”“尽快做” -> Fast mode, but still require confirmation of the Markdown content specification before design;
 - “只美化”“内容不动”“不要改文字” -> Faithful mode;
 - no explicit mode -> ask; if the user delegates the choice, use Standard mode.
 
@@ -62,21 +62,22 @@ Use when the user has not explicitly requested immediate production.
 
 1. Confirm the requirement card and source map.
 2. Analyze source material.
-3. Produce the proposed narrative, section outline, and page-level storyboard.
+3. Produce the proposed narrative, section outline, and complete `ppt-content-spec.md` defined in `content-spec.md`.
 4. Mark verified facts, user-provided claims, inferences, missing information, and excluded content.
-5. Obtain user confirmation.
+5. Obtain explicit user confirmation of the Markdown content specification.
 6. Only then recommend whole templates and proceed to design.
 7. After template selection, search the web first for ordinary non-confidential visual needs; use image generation only when search cannot satisfy the approved visual plan.
 
 ### Fast mode — explicit opt-in
 
-Use only when the user clearly says to make the deck directly or skip intermediate confirmation.
+Use only when the user clearly asks for speed or direct progress.
 
 - Infer non-critical details and continue.
 - Require enough input to identify the topic, audience, setting or duration, and intended audience outcome; otherwise ask before building.
 - Do not waive evidence, medical-safety, font-license, or final-QA gates.
-- Record the requirement card and report material assumptions with the first sample or final delivery.
-- Prefer user assets, template assets, and web-searchable visuals. Do not wait for AI image generation unless the user explicitly requests it or no usable alternative exists.
+- Produce the complete `ppt-content-spec.md` in one pass when the brief is sufficient.
+- Stop after delivering the Markdown file and request confirmation. A request such as “不用确认大纲” accelerates drafting but does not waive this gate unless the user has already approved the exact page-level content in the current task.
+- Do not inspect or recommend templates, build the three-slide sample, search design visuals, or create a PPTX before approval.
 
 ### Faithful mode — content locked, design remapped
 
@@ -84,6 +85,8 @@ Use when the user asks for beautification without changing content.
 
 - Preserve the original claims, sequence, data, and conclusion.
 - Confirm the authoritative content files and distinguish them from style-only or background references.
+- Convert the authoritative content into `ppt-content-spec.md`, including a suggested talk track for each slide without changing the locked meaning.
+- Obtain explicit confirmation of the Markdown specification before selecting a replacement template.
 - Correct only clear typos or formatting errors unless broader editing is approved.
 - Select a new whole template from the HiPPT managed asset pack; do not preserve the uploaded deck's visual template by implication.
 - Record every material content change for user review.
@@ -111,9 +114,18 @@ Before template selection, define:
 - speaker-note material that should not appear on the canvas;
 - content that must remain excluded.
 
-Standard mode requires explicit user confirmation of the requirement card, outline, and storyboard. Fast mode may proceed without a separate confirmation turn only when the minimum brief is complete and all material assumptions are recorded. Faithful mode requires confirmation of the authoritative content source and allowed change boundary.
+Create a durable Markdown file named `ppt-content-spec.md` using `content-spec.md`. The file must cover every planned slide and must include, at minimum:
+
+- slide number and title;
+- audience-facing on-slide content;
+- suggested speaker notes or talk track;
+- evidence/source status and unresolved questions.
+
+Apply this gate to Standard, Fast, and Faithful modes. Deliver the Markdown file to the user and stop for explicit confirmation. Do not access template candidates, recommend a template, build a sample, select fonts, source design visuals, or create the PPTX before approval.
 
 Use the page-level content specification defined in `content-policy.md`.
+
+After approval, treat the confirmed Markdown file as the design-stage content contract. If claims, page order, scope, or speaker-note meaning changes materially, update the file, add a visible change note, and request confirmation again before continuing.
 
 After the facts, evidence status, and source hierarchy are locked, read and apply `content-style.md` separately to the three output layers: slide titles, on-canvas body copy, and speaker notes. Do not apply a generic prose rewrite to all three layers.
 
@@ -129,12 +141,14 @@ In Faithful mode, treat this language pass as advisory unless the user explicitl
 
 ## 6. Recommend and select a whole template
 
+Enter this stage only after the user explicitly confirms `ppt-content-spec.md`.
+
 1. Read the managed asset-pack catalog.
 2. Build the candidate set exclusively from verified whole templates in the HiPPT managed asset pack; exclude uploaded content decks.
 3. Rank three to six whole templates using audience, task, tone, content density, chart needs, and brand constraints.
 4. Show a clickable template card for each candidate using the cover, representative pages, tags, and selection rationale.
 5. Let the user select the template itself, not source slide numbers.
-6. After selection, automatically map storyboard pages to suitable layouts within that template.
+6. After selection, automatically map the approved content-specification pages to suitable layouts within that template.
 
 Treat icon decks as an asset library, never as template candidates.
 

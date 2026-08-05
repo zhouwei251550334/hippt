@@ -57,7 +57,7 @@ function parseArgs(argv) {
 }
 
 function usage() {
-  return "Usage: node audit-language.mjs --input <file-or-directory> [--json] [--fail-on-warnings]\n\nScan extracted slide text, speaker notes, Markdown storyboards, or JSON/NDJSON inspection output. Findings are advisory by default and never rewrite content.";
+  return "Usage: node audit-language.mjs --input <file-or-directory> [--json] [--fail-on-warnings]\n\nScan extracted slide text, speaker notes, Markdown content specifications, or JSON/NDJSON inspection output. Findings are advisory by default and never rewrite content.";
 }
 
 async function listFiles(inputPath) {
