@@ -69,7 +69,7 @@ Create this concise working record before the content outline:
 | Privacy and compliance | Confidentiality, patient data, and external-processing limits |
 | Assumptions and missing | Items inferred or awaiting confirmation |
 
-Standard mode requires confirmation of the card. Fast mode may continue when the minimum brief is complete, but must retain the card and disclose material assumptions. Faithful mode requires confirmation of authoritative files and allowed edits.
+Standard mode requires confirmation of the card before drafting the content specification. Fast mode may continue directly from a complete minimum brief to drafting `ppt-content-spec.md`, but it must retain the card, disclose material assumptions, and stop for approval of the completed specification before any template or design work. Faithful mode requires confirmation of authoritative files and allowed edits before drafting the specification.
 
 ## Blocking conditions
 

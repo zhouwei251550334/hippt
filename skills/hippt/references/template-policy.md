@@ -76,7 +76,7 @@ Do not infer permission to recolor a customer logo, create an unofficial logo va
 
 ## Internal slide mapping
 
-After the user selects a whole template, HiPPT selects source slides or layouts automatically according to the approved storyboard.
+After the user selects a whole template, HiPPT selects source slides or layouts automatically according to the approved `ppt-content-spec.md`.
 
 - Match content job before visual similarity.
 - Prefer layouts that fit without shrinking type below the selected typography profile.

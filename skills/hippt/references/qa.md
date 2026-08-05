@@ -12,7 +12,8 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Supplied files have explicit roles and a documented source-of-truth hierarchy.
 - Every uploaded PPT/PPTX is classified as content-only unless an explicit source-template or visual-asset exception is recorded.
 - Material source conflicts are resolved or disclosed; style references are not used as factual evidence.
-- The approved communication job, section outline, and page-level storyboard are represented.
+- The approved `ppt-content-spec.md` exists, records its version and approval status, and is represented in the deck without unapproved material changes.
+- The approved communication job, section outline, slide titles, on-slide content, evidence status, and suggested speaker notes are represented.
 - Every slide has one narrative job and one primary claim.
 - Titles state a useful takeaway and do not read like production notes.
 - The opening establishes the purpose or question; the close resolves it with an action, synthesis, decision, or application.
@@ -111,6 +112,7 @@ Deliver:
 [deck-name]/
 ├── [deck-name].pptx
 ├── [deck-name]-preview.pdf
+├── ppt-content-spec.md
 └── QA-report.md
 ```
 

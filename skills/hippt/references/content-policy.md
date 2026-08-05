@@ -29,7 +29,7 @@ An uploaded PPT/PPTX does not become a style reference, template candidate, or v
 
 ## Content confirmation package
 
-In Standard mode, prepare content in three layers before template selection.
+In every operating mode, prepare content in three layers before template selection and write the result to `ppt-content-spec.md` as defined in `content-spec.md`.
 
 ### 1. Communication job
 
@@ -46,18 +46,19 @@ For each section, state:
 - connection to the preceding and following section;
 - expected number of slides.
 
-### 3. Page-level storyboard
+### 3. Page-level content specification
 
-Each proposed slide must contain four required fields:
+Each proposed slide must contain these required fields:
 
 | Field | Requirement |
 |---|---|
 | Slide title | A concise takeaway or audience-facing claim, not merely a topic label |
-| Core message | The single idea the audience should retain from this slide |
-| Support or evidence | Facts, data, examples, citations, or source material supporting the core message |
-| Visual expression | Recommended layout, chart, process, screenshot, image, table, or diagram |
+| On-slide content | The actual content hierarchy intended to appear on the slide, including claims, labels, bullets, data, or examples; not a vague summary |
+| Suggested speaker notes | A natural, speakable talk track that explains the slide, adds necessary context, and transitions to the next page without merely reading the canvas |
+| Support or evidence | Facts, data, examples, citations, source material, and evidence status supporting the slide |
+| Open questions | Missing information, assumptions, conflicts, or approval items; write “None” when resolved |
 
-Add speaker notes or production notes only when useful. They are not required user-facing fields.
+Add a design-neutral information-type suggestion only when useful, such as comparison, process, timeline, data, case, or summary. Do not select a template or prescribe decorative styling inside the content specification.
 
 ## Evidence status
 
@@ -69,7 +70,7 @@ Label material claims as:
 - Missing: necessary information is unavailable;
 - Excluded: intentionally outside the approved scope.
 
-Never invent a claim or source to complete a storyboard. If support is missing, revise the claim, mark the gap, or remove the slide.
+Never invent a claim or source to complete the page-level content specification. If support is missing, revise the claim, mark the gap, or remove the slide.
 
 ## Meaning-preservation gate
 
@@ -139,4 +140,4 @@ Never invent anecdotes, personal experience, quotations, named experts, or emoti
 
 ## Approval gate
 
-In Standard mode, ask the user to confirm the requirement card, source map, communication job, section outline, and page-level storyboard. After approval, changes to claims, sequence, source precedence, or scope require a visible change note rather than silent rewriting.
+In Standard, Fast, and Faithful modes, require explicit confirmation of the complete `ppt-content-spec.md`, including its requirement card, source map, communication job, section outline, and page-level content. Standard and Faithful modes may confirm intake boundaries before drafting; Fast mode may confirm them together with the completed specification. Do not proceed to template selection until the user explicitly confirms the file. After approval, changes to claims, sequence, source precedence, scope, or speaker-note meaning require a visible change note and renewed confirmation rather than silent rewriting.

@@ -19,7 +19,7 @@ For ordinary non-confidential visuals, web search is the default when the user h
 
 ## Visual plan
 
-For each storyboard page, identify:
+For each page in the approved `ppt-content-spec.md`, identify:
 
 - the communication job of the visual;
 - preferred visual type;
