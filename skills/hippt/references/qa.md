@@ -53,8 +53,11 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Palette, accent, shape, typography, icon or diagram, and image-treatment locks are consistent; any deliberate exception has a communicative reason.
 - The deck does not rely on generic AI-design defaults such as repeated equal-card rows, random gradients, decorative pills or dots, ornamental section numbers, fake interface chrome, or invented precision.
 - Equal columns, cards, steps, labels, and status markers represent real semantic equivalence or state rather than filling template placeholders.
+- The layout-diversity map records each output slide's source layout or derived composition and explains every exact reuse.
 - Slide silhouettes vary with content job without losing the selected template's recognizable visual system.
-- Consecutive slides do not repeat an identical body composition more than twice unless they form an intentional series or comparison.
+- Every non-series body slide uses a distinct compatible source layout or derived composition where the selected template allows it.
+- Adjacent non-series slides do not repeat an identical body composition. Any repeated layout forms a justified same-class series, comparison, case pattern, or data update.
+- The deck does not switch among unrelated whole templates page by page merely to increase apparent variety.
 - Every major visual move supports hierarchy, explanation, evidence, navigation, or emphasis; decorative complexity with no communication job has been removed.
 - Essential information remains understandable without color alone, and foreground contrast remains suitable for the delivery setting.
 - Source templates and original user files remain unchanged.
@@ -134,6 +137,7 @@ Keep the user-facing report concise and include:
 - input route, source-of-truth files, and material assumptions;
 - selected template and brand adaptation;
 - template source identifier and any source-template or embedded-asset exception;
+- layout-diversity result: unique layouts versus applicable slides, repeated layouts, and documented reuse reasons;
 - page count and output files;
 - content and evidence status;
 - font audit and substitutions;

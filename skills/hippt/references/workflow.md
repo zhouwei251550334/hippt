@@ -149,6 +149,7 @@ Enter this stage only after the user explicitly confirms `ppt-content-spec.md`.
 4. Show a clickable template card for each candidate using the cover, representative pages, tags, and selection rationale.
 5. Let the user select the template itself, not source slide numbers.
 6. After selection, automatically map the approved content-specification pages to suitable layouts within that template.
+7. Build the internal layout-diversity map defined in `template-policy.md`. Prefer a distinct source layout or derived body composition for every non-series slide and document every exact reuse.
 
 Treat icon decks as an asset library, never as template candidates.
 
@@ -197,7 +198,8 @@ Use a suitable searched or explicitly approved existing asset for the cover when
 - Keep important text and slide numbering as editable PPT layers.
 - Put timing scaffolds and talk tracks in speaker notes unless the audience needs to see them.
 - Use generated full-slide visuals without baked-in text, logos, or page numbers.
-- Preserve the template's signature system while varying slide silhouettes according to content job. Avoid repeating one generic card layout throughout the deck.
+- Preserve the template's signature system while varying slide silhouettes according to content job. Do not repeat an exact layout on adjacent non-series slides, and avoid repeating one generic card layout throughout the deck.
+- Reuse layouts freely only when the pages are intentionally the same content class or series and repetition improves comparison, learning, or navigation.
 - Apply the palette, accent, shape, typography, icon, and image-treatment locks defined in `design-taste.md`.
 
 ## 10. Verify and deliver

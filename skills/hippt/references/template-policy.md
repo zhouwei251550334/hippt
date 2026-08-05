@@ -78,13 +78,19 @@ Do not infer permission to recolor a customer logo, create an unofficial logo va
 
 After the user selects a whole template, HiPPT selects source slides or layouts automatically according to the approved `ppt-content-spec.md`.
 
+Before building, create an internal layout-diversity map with: output slide number, content job, selected source slide or layout identifier, body silhouette, and any reuse reason.
+
 - Match content job before visual similarity.
 - Prefer layouts that fit without shrinking type below the selected typography profile.
 - Treat a template's original small text as a layout defect to correct, not a style token to preserve. Shorten, split, or remap the slide before reducing type.
 - Preserve the template's palette, geometry, and visual rhythm while allowing font family, weight, line spacing, and text-box density to change for readability.
 - Reuse the selected HiPPT template slide's composition rather than rebuilding a generic approximation. Here, `source slide` means a slide from the selected managed template, never a slide from the uploaded content deck.
 - Do not force content into every placeholder.
-- Vary slide silhouettes while preserving a coherent system.
+- Treat one unique source layout per non-series body slide as the default target when compatible layouts are available.
+- Reuse an exact source layout only for genuinely similar content, an intentional series, step-through, controlled comparison, recurring case pattern, or data update; record the reason in the layout-diversity map.
+- When the selected template lacks enough suitable unique layouts, derive a new body variant from its grid, geometry, components, and signature elements instead of switching to an unrelated whole template.
+- Prioritize content fit, evidence clarity, projection readability, and accessibility over novelty. Record why a repeated layout was safer than a forced variation.
+- Vary slide silhouettes while preserving a coherent whole-template system.
 - Use the visual read and deck-specific dials from `design-taste.md` to control how far layouts may depart from the template baseline.
 - Use equal cards or columns only for genuinely equivalent items. Do not convert every list, process, comparison, or claim into the same three-card composition.
 - Use containers only when they encode grouping, comparison, state, or hierarchy; prefer spacing, alignment, scale, and a restrained divider when a box adds no meaning.
