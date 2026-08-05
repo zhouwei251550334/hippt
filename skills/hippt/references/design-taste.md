@@ -74,7 +74,10 @@ These are contextual warnings, not absolute bans. Three equal cards are correct 
 - Give every slide one visual job: statement, image, chart, comparison, process, evidence, case, decision, summary, or transition.
 - Match the layout family to that job before considering decoration.
 - Preserve recurring title zones, margins, palette, and signature template elements while varying the body silhouette.
-- Avoid more than two consecutive slides with an identical body layout unless they are an intentional series, step-through, or controlled comparison.
+- Prefer a distinct source layout or derived body composition for every non-series content slide when the selected template offers a compatible option.
+- Do not repeat an exact body layout on adjacent non-series slides. Outside intentional series, avoid using the same exact source layout more than twice across the deck.
+- Allow repeated layouts for genuinely similar content, step-throughs, controlled comparisons, recurring case pages, or data updates when repetition establishes a useful visual grammar.
+- Keep one coherent whole-template system across the deck. Do not switch to unrelated whole templates page by page merely to manufacture variety.
 - Use cards only when boundaries communicate grouping, equivalence, hierarchy, or state. Otherwise prefer spacing, alignment, scale, and a restrained divider.
 - Replace long unstructured lists with a real information form such as grouping, timeline, matrix, process, comparison, or appendix.
 - Let complex evidence pages be denser than section or synthesis pages; do not force every slide to have the same density.

@@ -35,6 +35,7 @@ Use HiPPT to turn source material into an editable, template-based presentation 
 14. Select a typography profile before slide mapping. Projection readability outranks template fidelity: never inherit a template's small type merely to preserve its original density.
 15. After facts and evidence status are locked, run a context-aware language pass. Remove formulaic AI phrasing without changing meaning, certainty, attribution, approved wording, or the presenter's authentic voice.
 16. Before composing slides, declare a one-line visual read and infer deck-specific layout variance, visual density, and visual energy. Use these as constraints, not as permission to override brand, evidence, accessibility, or the selected template.
+17. Within the selected whole-template visual system, maximize page-to-page layout diversity. Prefer a different source slide, layout, or derived body composition for every non-series slide; reuse an exact layout only for genuinely similar content, an intentional series, a controlled comparison, or another documented communication reason.
 
 ## Workflow
 
