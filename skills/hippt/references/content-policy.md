@@ -29,7 +29,7 @@ An uploaded PPT/PPTX does not become a style reference, template candidate, or v
 
 ## Content confirmation package
 
-In every operating mode, prepare content in three layers before template selection and write the result to `ppt-content-spec.md` as defined in `content-spec.md`.
+In every operating mode and delivery format, prepare content in three layers before template/theme selection or interaction design and write the result to `ppt-content-spec.md` as defined in `content-spec.md`.
 
 ### 1. Communication job
 
@@ -59,6 +59,15 @@ Each proposed slide must contain these required fields:
 | Open questions | Missing information, assumptions, conflicts, or approval items; write “None” when resolved |
 
 Add a design-neutral information-type suggestion only when useful, such as comparison, process, timeline, data, case, or summary. Do not select a template or prescribe decorative styling inside the content specification.
+
+## Format-neutral content contract
+
+- Apply the same requirement card, source hierarchy, evidence review, page titles, on-page content, data definitions, citations, and suggested speaker notes to PPTX and HTML delivery.
+- Treat delivery format as a rendering choice, not permission to weaken, expand, or reinterpret approved content.
+- In HTML, include all audience-facing strings in the content boundary: chart labels and tooltips, map labels and popovers, hover text, click-to-expand text, controls, animation-step labels, accessibility text, and non-linear branches.
+- After approval, interaction design may reveal, sequence, filter, or restate approved material. It must not add a new substantive fact, conclusion, causal claim, medical interpretation, product promise, or commitment.
+- If format-specific production requires new substantive content, update `ppt-content-spec.md`, record the change, and obtain renewed approval before continuing.
+- For explicit dual delivery, use one approved content contract as the source of truth. Record any necessary format-specific omission or wording difference instead of allowing silent divergence.
 
 ## Evidence status
 
@@ -135,9 +144,9 @@ Never invent anecdotes, personal experience, quotations, named experts, or emoti
 - Move speaking detail into notes instead of filling the canvas.
 - Shorten text or change the layout before shrinking the type.
 - Split a slide when two different audience conclusions are competing for attention.
-- Do not force content into every placeholder of a template.
+- Do not force content into every placeholder of a PPTX template or every component slot of an HTML theme.
 - Do not force three bullets, symmetrical wording, or a slogan merely because a layout contains three columns or a large headline area.
 
 ## Approval gate
 
-In Standard, Fast, and Faithful modes, require explicit confirmation of the complete `ppt-content-spec.md`, including its requirement card, source map, communication job, section outline, and page-level content. Standard and Faithful modes may confirm intake boundaries before drafting; Fast mode may confirm them together with the completed specification. Do not proceed to template selection until the user explicitly confirms the file. After approval, changes to claims, sequence, source precedence, scope, or speaker-note meaning require a visible change note and renewed confirmation rather than silent rewriting.
+In Standard, Fast, and Faithful modes and for PPTX, HTML, or explicit dual delivery, require explicit confirmation of the complete `ppt-content-spec.md`, including its requirement card, source map, communication job, section outline, and page-level content. Standard and Faithful modes may confirm intake boundaries before drafting; Fast mode may confirm them together with the completed specification. Do not proceed to PPTX template selection, HTML theme or interaction design, sample creation, or production until the user explicitly confirms the file. After approval, changes to claims, sequence, source precedence, scope, speaker-note meaning, or substantive interaction copy require a visible change note and renewed confirmation rather than silent rewriting.

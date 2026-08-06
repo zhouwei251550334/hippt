@@ -1,22 +1,23 @@
-# Mandatory PPT content specification
+# Mandatory presentation content specification
 
-Create a durable Markdown artifact named `ppt-content-spec.md` before template selection or slide production. Do not satisfy this gate with a short chat summary alone. Provide the file to the user and wait for explicit approval.
+Create a durable Markdown artifact named `ppt-content-spec.md` before PPTX template selection, HTML theme or interaction design, or presentation production. Keep this filename for one shared content contract across delivery formats. Do not satisfy this gate with a short chat summary alone. Provide the file to the user and wait for explicit approval.
 
 ## Purpose
 
 Use the file as the content contract between source analysis and visual design. Make it detailed enough that the user can judge the whole presentation without seeing a template.
 
-Keep it design-neutral. Do not recommend a specific template, font, palette, photograph, icon, or decorative treatment before approval.
+Keep it format- and design-neutral. Do not recommend a specific PPTX template, HTML theme, interaction pattern, font, palette, photograph, icon, or decorative treatment before approval.
 
 ## Required document structure
 
 ```markdown
-# PPT 内容说明
+# 演示内容说明
 
 ## 文档状态
 
 - 状态：待确认
 - 版本：v1
+- 预期交付格式：PPTX / HTML / 双版本
 - 制作模式：标准 / 快速 / 忠实迁移
 - 预计页数：
 - 预计演讲时长：
@@ -92,5 +93,6 @@ Keep it design-neutral. Do not recommend a specific template, font, palette, pho
 - Treat “确认”“按这个内容做”“内容没问题” or an equally explicit statement as approval.
 - Treat page-specific edits as a revision request, not approval of the unchanged remainder unless the intent is clear.
 - Update the file version and change notes after revisions.
-- After approval, freeze page order, claims, source relationships, and speaker-note meaning for template selection and production.
+- After approval, freeze page order, claims, source relationships, and speaker-note meaning for PPTX or HTML design and production.
+- Treat later HTML tooltips, popovers, map labels, chart labels, accessibility text, or interaction instructions as presentation content. They may restate approved material, but any new substantive claim requires an updated specification and renewed approval.
 - If a material change is needed later, update `ppt-content-spec.md` first and obtain renewed confirmation.
