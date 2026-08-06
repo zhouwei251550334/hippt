@@ -1,6 +1,18 @@
 # HiPPT workflow
 
-## 1. Start with a concise mode choice
+## 1. Select the expected delivery format
+
+Unless the request already makes the format explicit, begin with this concise choice before the operating-mode choice:
+
+> 请选择最终交付格式。无论选择哪种格式，HiPPT 都会先执行相同的内容审核流程，确认每页标题、页面内容、数据、演讲稿和证据来源；内容确认后才进入样式设计。<br>
+> **PPTX**：适合讲课、比赛、正式汇报和文件交付，可在 PowerPoint/WPS 中编辑，兼容性较高，复杂互动能力有限。<br>
+> **HTML**：适合产品演示、数据展示和在线传播，支持动态图表、三维、地图和实时互动，但需要浏览器运行，交付和测试更复杂。
+
+Use a structured choice when the interface supports it. Record dual PPTX+HTML delivery only when the user explicitly requests both. Format selection records the expected deliverable; it does not authorize template, theme, visual, or interaction design before content approval.
+
+Infer and proceed when the user already says PPT/PPTX/PowerPoint/WPS or HTML/web/interactive presentation. If the user delegates the choice, recommend PPTX for lecture, competition, formal reporting, offline file handoff, or routine editing; recommend HTML for interactive product demonstration, exploratory data, 3D, maps, browser sharing, or live parameters.
+
+## 2. Start with a concise operating-mode choice
 
 Unless the user's request already makes the mode explicit, begin with this concise choice:
 
@@ -17,7 +29,7 @@ Infer and proceed when the request is already explicit:
 - “只美化”“内容不动”“不要改文字” -> Faithful mode;
 - no explicit mode -> ask; if the user delegates the choice, use Standard mode.
 
-## 2. Collect human content input and identify the task
+## 3. Collect human content input and identify the task
 
 Read and follow `intake.md` before outlining, template selection, or slide production.
 
@@ -33,7 +45,7 @@ Inventory every supplied file by role: source of truth, supporting reference, st
 
 When the supplied file is PPT/PPTX, apply the content-only boundary in `intake.md` before extraction. The source deck is not a template candidate, style reference, or visual-asset library by default.
 
-Create a concise requirement card covering the communication job, audience, setting, duration, target length, source boundary, permission to supplement, transformation freedom, must-include and must-exclude content, brand/template constraints, confidentiality, medical constraints, assumptions, and missing information.
+Create a concise requirement card covering the expected delivery format, communication job, audience, setting, duration, target length, source boundary, permission to supplement, transformation freedom, must-include and must-exclude content, brand/template or HTML-theme constraints, confidentiality, medical constraints, assumptions, and missing information.
 
 Infer as much as possible from the user's request and supplied files. Ask only for missing information that would materially change the result, normally no more than three questions at a time.
 
@@ -54,7 +66,7 @@ Express the communication job in one sentence:
 
 Do not proceed beyond this gate when the audience outcome is unknown, source files materially conflict, patient or confidential data is unsafe to process, or a high-stakes claim lacks an approved source boundary.
 
-## 3. Apply the operating mode
+## 4. Apply the operating mode
 
 ### Standard mode — default
 
@@ -65,8 +77,8 @@ Use when the user has not explicitly requested immediate production.
 3. Produce the proposed narrative, section outline, and complete `ppt-content-spec.md` defined in `content-spec.md`.
 4. Mark verified facts, user-provided claims, inferences, missing information, and excluded content.
 5. Obtain explicit user confirmation of the Markdown content specification.
-6. Only then recommend whole templates and proceed to design.
-7. After template selection, search the web first for ordinary non-confidential visual needs; use image generation only when search cannot satisfy the approved visual plan.
+6. Only then branch by delivery format and proceed to design.
+7. After the format-specific visual system is selected, search the web first for ordinary non-confidential visual needs; use image generation only when search cannot satisfy the approved visual plan.
 
 ### Fast mode — explicit opt-in
 
@@ -77,7 +89,7 @@ Use only when the user clearly asks for speed or direct progress.
 - Do not waive evidence, medical-safety, font-license, or final-QA gates.
 - Produce the complete `ppt-content-spec.md` in one pass when the brief is sufficient.
 - Stop after delivering the Markdown file and request confirmation. A request such as “不用确认大纲” accelerates drafting but does not waive this gate unless the user has already approved the exact page-level content in the current task.
-- Do not inspect or recommend templates, build the three-slide sample, search design visuals, or create a PPTX before approval.
+- Do not inspect or recommend PPTX templates or HTML themes, build the three-page sample, search design visuals, design interactions, or create PPTX/HTML output before approval.
 
 ### Faithful mode — content locked, design remapped
 
@@ -86,22 +98,23 @@ Use when the user asks for beautification without changing content.
 - Preserve the original claims, sequence, data, and conclusion.
 - Confirm the authoritative content files and distinguish them from style-only or background references.
 - Convert the authoritative content into `ppt-content-spec.md`, including a suggested talk track for each slide without changing the locked meaning.
-- Obtain explicit confirmation of the Markdown specification before selecting a replacement template.
+- Obtain explicit confirmation of the Markdown specification before selecting a replacement PPTX template or HTML theme.
 - Correct only clear typos or formatting errors unless broader editing is approved.
-- Select a new whole template from the HiPPT managed asset pack; do not preserve the uploaded deck's visual template by implication.
+- For PPTX, select a new whole template from the HiPPT managed asset pack. For HTML, rebuild inside a web-native theme. Do not preserve the uploaded deck's visual template by implication.
 - Record every material content change for user review.
 
-## 4. Select the transformation type
+## 5. Select the transformation type
 
 For an existing deck, identify one of these separately from the operating mode:
 
-- Faithful content migration: content and sequence stay fixed; rebuild them in a selected HiPPT managed template.
+- Faithful content migration: content and sequence stay fixed; rebuild them in the selected delivery format.
 - Structural optimization: reorganize sections or slides while preserving source facts; confirm the change map first.
-- Template migration: map approved content into a selected whole template while retaining factual and brand boundaries.
+- PPTX template migration: map approved content into a selected whole template while retaining factual and brand boundaries.
+- HTML presentation rebuild: map approved content into a web-native theme and interaction system without inheriting PPTX masters or fixed geometry.
 
-For a content-only source deck, inspect its visual system only to identify and prevent accidental carryover. Do not use it as the redesign baseline or preserve its visual cues. Apply the redesign audit in `design-taste.md` to the selected HiPPT template, or to an explicitly approved source-template exception.
+For a content-only source deck, inspect its visual system only to identify and prevent accidental carryover. Do not use it as the redesign baseline or preserve its visual cues. For PPTX, apply the redesign audit in `design-taste.md` to the selected HiPPT template or an explicitly approved source-template exception. For HTML, follow the theme boundary in `html-mode.md`.
 
-## 5. Pass the content gate
+## 6. Pass the universal content gate
 
 Before template selection, define:
 
@@ -121,7 +134,7 @@ Create a durable Markdown file named `ppt-content-spec.md` using `content-spec.m
 - suggested speaker notes or talk track;
 - evidence/source status and unresolved questions.
 
-Apply this gate to Standard, Fast, and Faithful modes. Deliver the Markdown file to the user and stop for explicit confirmation. Do not access template candidates, recommend a template, build a sample, select fonts, source design visuals, or create the PPTX before approval.
+Apply this gate to Standard, Fast, and Faithful modes and to PPTX, HTML, or explicit dual delivery. Deliver the Markdown file to the user and stop for explicit confirmation. Do not access template or theme candidates, recommend a visual system, build a sample, select fonts, source design visuals, design interactions, or create PPTX/HTML output before approval.
 
 Use the page-level content specification defined in `content-policy.md`.
 
@@ -139,7 +152,13 @@ Run the language pass in this order:
 
 In Faithful mode, treat this language pass as advisory unless the user explicitly allows wording changes.
 
-## 6. Recommend and select a whole template
+## 7. Branch by delivery format only after approval
+
+- PPTX: continue with the existing PPTX workflow below.
+- HTML: read and follow `html-mode.md`; do not continue into the PPTX template workflow.
+- Explicit dual delivery: build two independent presentation renderings from the same approved `ppt-content-spec.md`. Do not require pixel-identical pages. If either rendering needs a substantive content change, update the shared Markdown contract and obtain renewed confirmation before changing either output.
+
+## 8. PPTX only: recommend and select a whole template
 
 Enter this stage only after the user explicitly confirms `ppt-content-spec.md`.
 
@@ -155,7 +174,7 @@ Treat icon decks as an asset library, never as template candidates.
 
 After the whole template is selected, read `design-taste.md` and state a one-line visual read. Infer `LAYOUT_VARIANCE`, `VISUAL_DENSITY`, and `VISUAL_ENERGY` from the audience, setting, content, trust requirements, brand, and selected template. Do not ask the user to tune these values unless two materially different visual directions remain plausible.
 
-## 7. Audit fonts and visual assets
+## 9. PPTX only: audit fonts and visual assets
 
 - Select the typography profile before mapping content to layouts:
   - `projection` for lectures, competitions, training, medical reasoning, and auditorium delivery;
@@ -178,7 +197,7 @@ After the whole template is selected, read `design-taste.md` and state a one-lin
 - Use image generation only when a bespoke composition is materially useful, a safe and licensed search result is unavailable, privacy makes real imagery unsuitable, or the user explicitly requests generation.
 - Begin approved image search while template text and layout editing proceeds when the available tools permit concurrent work; do not block a code-editing fast path on unnecessary asset generation.
 
-## 8. Build the three-slide sample
+## 10. PPTX only: build the three-slide sample
 
 Create:
 
@@ -190,7 +209,7 @@ Review template fit, type, density, visual direction, and editability. Revise un
 
 Use a suitable searched or explicitly approved existing asset for the cover when one is readily available. Do not delay the sample for AI generation merely to replace a searchable generic photograph or pattern.
 
-## 9. Build the full deck
+## 11. PPTX only: build the full deck
 
 - Clone or import the selected HiPPT managed template rather than recreating its visual language from scratch.
 - Rebuild source-deck content inside the selected template. Do not import the source deck's master, layouts, theme, decorative media, or slide geometry.
@@ -202,7 +221,7 @@ Use a suitable searched or explicitly approved existing asset for the cover when
 - Reuse layouts freely only when the pages are intentionally the same content class or series and repetition improves comparison, learning, or navigation.
 - Apply the palette, accent, shape, typography, icon, and image-treatment locks defined in `design-taste.md`.
 
-## 10. Verify and deliver
+## 12. PPTX only: verify and deliver
 
 After every meaningful change:
 

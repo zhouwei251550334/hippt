@@ -1,5 +1,7 @@
 # Template and asset-pack policy
 
+Apply this file to the PPTX branch only. For HTML delivery, follow `html-mode.md` and use a separate web-native theme/component catalog. Do not mix PPTX masters or fixed source-slide geometry into HTML production.
+
 ## Architecture
 
 HiPPT uses two separately maintained components:

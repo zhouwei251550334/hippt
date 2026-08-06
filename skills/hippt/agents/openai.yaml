@@ -1,3 +1,4 @@
 interface:
   display_name: "HiPPT"
-  short_description: "企业PPT制作、改造与质量检查"
+  short_description: "企业PPTX与HTML互动演示制作、改造和质量检查"
+  default_prompt: "使用 $hippt 先审核演示内容，再选择 PPTX 或 HTML 形式完成设计与交付。"

@@ -2,9 +2,9 @@
 
 ## Release rule
 
-A generated file is not a verified presentation merely because it exists or a build script exits successfully. Do not declare completion until the content, fonts, layout, rendering, editability, privacy, and delivery package have passed the applicable checks below.
+A generated file or web build is not a verified presentation merely because it exists or a build script exits successfully. Do not declare completion until the content, fonts, layout, rendering, editability or interaction, privacy, and delivery package have passed the applicable format-specific checks below.
 
-After every meaningful PPT change, rebuild or save the PPTX, rerun structural checks, and render every slide again.
+After every meaningful PPTX change, rebuild or save the PPTX, rerun structural checks, and render every slide again. After every meaningful HTML change, rebuild the deployable output and rerun browser, interaction, content-extraction, and fallback checks.
 
 ## 1. Content and narrative QA
 
@@ -14,6 +14,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Material source conflicts are resolved or disclosed; style references are not used as factual evidence.
 - The approved `ppt-content-spec.md` exists, records its version and approval status, and is represented in the deck without unapproved material changes.
 - The approved communication job, section outline, slide titles, on-slide content, evidence status, and suggested speaker notes are represented.
+- For HTML, visible text, tooltips, popovers, map and chart labels, controls, animation-step copy, accessibility text, and non-linear branches remain within the approved content boundary.
 - Every slide has one narrative job and one primary claim.
 - Titles state a useful takeaway and do not read like production notes.
 - The opening establishes the purpose or question; the close resolves it with an action, synthesis, decision, or application.
@@ -38,7 +39,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Images, logos, fonts, and other third-party assets have a recorded usage status.
 - Every searched image resolves to its source page, uses the original/full-resolution file rather than a search thumbnail, and has recorded ownership and usage-rights status.
 
-## 3. Template and brand QA
+## 3. PPTX template and brand QA
 
 - The selected template identifier resolves to a verified whole template in the HiPPT managed asset pack, or an explicit user-approved exception is documented.
 - Uploaded content decks were excluded from the template candidate set.
@@ -62,7 +63,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Essential information remains understandable without color alone, and foreground contrast remains suitable for the delivery setting.
 - Source templates and original user files remain unchanged.
 
-## 4. Typography QA
+## 4. PPTX typography QA
 
 - The delivery setting has an explicit typography profile: projection, meeting, or compact.
 - Cover title, slide title, key message, body, labels, and sources follow a documented family-and-weight role map.
@@ -76,7 +77,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Final layout JSON has passed `scripts/audit-typography.mjs` for the selected profile.
 - Any text below the profile floor is limited to sources, footnotes, page markers, or an explicitly logged exception. Template-original small type is not an exception.
 
-## 5. Layout and visual QA
+## 5. PPTX layout and visual QA
 
 - Run automated overflow and out-of-bounds checks where available.
 - Render every slide, not only representative pages.
@@ -87,7 +88,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Verify that page numbers, titles, labels, and citations are separate editable layers rather than baked into generated imagery.
 - Confirm that AI-generated imagery is clearly non-evidentiary where that distinction matters.
 
-## 6. Technical and editability QA
+## 6. PPTX technical and editability QA
 
 - The PPTX can be reparsed or reopened without corruption when the environment permits.
 - Slide count, order, dimensions, masters, layouts, notes, and media relationships are intact.
@@ -98,7 +99,7 @@ After every meaningful PPT change, rebuild or save the PPTX, rerun structural ch
 - Verify behavior after font installation, template import, and PDF export.
 - If the runtime cannot render every slide, do not issue PASS. Request a human visual check or move the file to a runtime with rendering support, and record the missing verification explicitly.
 
-## 7. Preview PDF QA
+## 7. PPTX preview PDF QA
 
 Generate the preview PDF only from the final checked PPTX.
 
@@ -107,7 +108,22 @@ Generate the preview PDF only from the final checked PPTX.
 - No page is blank, cropped, duplicated, or missing.
 - The PDF is a viewing artifact; the PPTX remains the editable source of truth.
 
+## 8. HTML interaction and delivery QA
+
+For HTML delivery, read and apply the full verification checklist in `html-mode.md`. At minimum:
+
+- The final extraction of all visible and hidden audience-facing strings matches the approved `ppt-content-spec.md`; any substantive addition has renewed approval.
+- The approved `html-interaction-spec.md` maps every page, interaction, static fallback, runtime, source, privacy boundary, and open risk.
+- The presentation uses a web-native theme and does not execute a PPTX master, fixed source-slide geometry, or page screenshot as its layout system.
+- Browser console, network requests, assets, page enter/exit lifecycle, keyboard navigation, reduced motion, responsive viewports, static fallback, and print/PDF behavior have been checked.
+- Comment, Edit, Draw, and live-parameter states are isolated from presentation mode and persist correctly when included.
+- Dependencies are version-pinned; software licenses, content-asset rights, attribution, external services, tokens, data handling, and offline/hosted assumptions are documented.
+- Heavy rendering, physics, media, maps, observers, and event listeners pause or dispose when their page is inactive.
+- The delivery contains no secret or unrestricted client-side credential and no unapproved confidential or patient-identifiable external data flow.
+
 ## Default delivery package
+
+For PPTX, deliver:
 
 Deliver:
 
@@ -129,11 +145,14 @@ Add only when requested or materially useful:
 
 Do not include unlicensed font files, confidential raw source material, temporary render files, or unrelated working assets in the delivery package.
 
+For HTML, use the package defined in `html-mode.md`: deployable build, editable source and lockfile, shared content contract, HTML interaction specification, static PDF fallback, and QA report. Do not deploy or publish externally without user authorization.
+
 ## QA report
 
 Keep the user-facing report concise and include:
 
 - task and selected operating mode;
+- selected delivery format and any explicit dual-delivery scope;
 - input route, source-of-truth files, and material assumptions;
 - selected template and brand adaptation;
 - template source identifier and any source-template or embedded-asset exception;
@@ -167,3 +186,5 @@ Treat an unapproved below-floor body size, missing title/body hierarchy, or unre
 Treat any language edit that changes a material claim, evidence status, medical boundary, product status, or user-approved conclusion without approval as BLOCKED.
 
 Treat reuse of an uploaded content deck's template, visual system, or embedded media without an explicit recorded exception as BLOCKED.
+
+For HTML, treat unapproved substantive interaction copy, missing browser or lifecycle verification, unsafe client-side credentials, unapproved external data flow, missing required attribution, or absent static fallback as BLOCKED.

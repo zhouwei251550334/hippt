@@ -2,9 +2,9 @@
 
 ## Opening interaction
 
-After the operating-mode choice, establish how the user will provide content. Use a structured choice when the interface supports it; otherwise ask concisely:
+After the expected-delivery-format and operating-mode choices, establish how the user will provide content. Use a structured choice when the interface supports it; otherwise ask concisely:
 
-> 请提供本次PPT的内容来源：<br>
+> 请提供本次演示的内容来源：<br>
 > **上传材料（推荐）**：上传Word、PPT、PDF、Excel、图片或其他资料；<br>
 > **直接描述**：说清主题和希望达到的效果；<br>
 > **材料＋补充要求**：上传资料后，再说明需要增加、删减或强调的内容。
@@ -22,7 +22,7 @@ The minimum brief contains four items:
 
 When starting from a short sentence, ask at most three questions in one turn. Prioritize missing items that materially change the story. Do not force the user to complete a long form.
 
-Optional but useful inputs include target slide count, language, tone, brand or template, must-include and must-exclude content, permission to supplement with external sources, content-change freedom, confidentiality, and desired deliverables.
+Optional but useful inputs include expected delivery format, target slide count, language, tone, brand or template/theme, must-include and must-exclude content, permission to supplement with external sources, content-change freedom, confidentiality, and desired deliverables.
 
 ## Uploaded-file workflow
 
@@ -53,6 +53,7 @@ Create this concise working record before the content outline:
 
 | Field | Record |
 |---|---|
+| Delivery format | PPTX, HTML, or explicitly requested dual delivery |
 | Operating mode | Standard, Fast, or Faithful |
 | Input route | Files, brief, or mixed |
 | Topic and task | What is being presented and why |
@@ -65,7 +66,7 @@ Create this concise working record before the content outline:
 | Supplement permission | Whether web research or added content is allowed |
 | Transformation freedom | Faithful, structural optimization, or open redesign |
 | Must include / exclude | Non-negotiable content boundaries |
-| Brand and template | HiPPT managed template by default; any explicit brand or source-template exception |
+| Brand and visual system | HiPPT managed PPTX template or web-native HTML theme; any explicit brand or source-template exception |
 | Privacy and compliance | Confidentiality, patient data, and external-processing limits |
 | Assumptions and missing | Items inferred or awaiting confirmation |
 
