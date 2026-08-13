@@ -1,5 +1,14 @@
 # HiPPT workflow
 
+## Contents
+
+1. Delivery format and operating mode
+2. Human content intake and operating mode
+3. Transformation type and universal content gate
+4. Delivery-format and PPTX design branches
+5. Template or per-page generative execution
+6. Typography, sample, full build, and delivery QA
+
 ## 1. Select the expected delivery format
 
 Unless the request already makes the format explicit, begin with this concise choice before the operating-mode choice:
@@ -100,7 +109,7 @@ Use when the user asks for beautification without changing content.
 - Convert the authoritative content into `ppt-content-spec.md`, including a suggested talk track for each slide without changing the locked meaning.
 - Obtain explicit confirmation of the Markdown specification before selecting a replacement PPTX template or HTML theme.
 - Correct only clear typos or formatting errors unless broader editing is approved.
-- For PPTX, select a new whole template from the HiPPT managed asset pack. For HTML, rebuild inside a web-native theme. Do not preserve the uploaded deck's visual template by implication.
+- For PPTX, use a new whole template from the HiPPT managed asset pack by default, or use the per-page generative route when the user explicitly selects it. For HTML, rebuild inside a web-native theme. Do not preserve the uploaded deck's visual template by implication.
 - Record every material content change for user review.
 
 ## 5. Select the transformation type
@@ -110,6 +119,7 @@ For an existing deck, identify one of these separately from the operating mode:
 - Faithful content migration: content and sequence stay fixed; rebuild them in the selected delivery format.
 - Structural optimization: reorganize sections or slides while preserving source facts; confirm the change map first.
 - PPTX template migration: map approved content into a selected whole template while retaining factual and brand boundaries.
+- Per-page generative PPTX design: use an image-generation model such as Image2 to create the visual composition of each approved page, then assemble the final PPTX with editable content layers. This is an explicit alternative to a managed whole template, not permission to rasterize the approved content.
 - HTML presentation rebuild: map approved content into a web-native theme and interaction system without inheriting PPTX masters or fixed geometry.
 
 For a content-only source deck, inspect its visual system only to identify and prevent accidental carryover. Do not use it as the redesign baseline or preserve its visual cues. For PPTX, apply the redesign audit in `design-taste.md` to the selected HiPPT template or an explicitly approved source-template exception. For HTML, follow the theme boundary in `html-mode.md`.
@@ -154,13 +164,24 @@ In Faithful mode, treat this language pass as advisory unless the user explicitl
 
 ## 7. Branch by delivery format only after approval
 
-- PPTX: continue with the existing PPTX workflow below.
+- PPTX: select a design execution route below: managed whole-template PPTX (default) or per-page generative PPTX design (only when the user explicitly requests it).
 - HTML: read and follow `html-mode.md`; do not continue into the PPTX template workflow.
 - Explicit dual delivery: build two independent presentation renderings from the same approved `ppt-content-spec.md`. Do not require pixel-identical pages. If either rendering needs a substantive content change, update the shared Markdown contract and obtain renewed confirmation before changing either output.
 
-## 8. PPTX only: recommend and select a whole template
+## 8. PPTX only: select the design execution route
 
 Enter this stage only after the user explicitly confirms `ppt-content-spec.md`.
+
+Offer the user these two PPTX design routes. Recommend the managed whole-template route unless the user has explicitly selected per-page generative design.
+
+1. **Managed whole-template PPTX (default):** map approved content to an audited HiPPT template. This is preferred when a stable brand system, conventional visual consistency, or maximum native editability matters most.
+2. **Per-page generative PPTX design:** use an image-generation model such as Image2 to create the visual composition for every approved page. Use only when the user explicitly requests this route or explicitly approves it after the trade-offs are explained: faster bespoke visual direction and greater page variety, but every generated visual requires extra factual, artifact, privacy, and editability review.
+
+Both routes must read `design-taste.md`, state a one-line visual read, and infer `LAYOUT_VARIANCE`, `VISUAL_DENSITY`, and `VISUAL_ENERGY` from the audience, setting, content, trust requirements, and brand. Do not ask the user to tune these values unless two materially different visual directions remain plausible.
+
+## 9. PPTX only: managed whole-template route
+
+Enter this stage only after the user selects the managed whole-template route.
 
 1. Read the managed asset-pack catalog.
 2. Build the candidate set exclusively from verified whole templates in the HiPPT managed asset pack; exclude uploaded content decks.
@@ -172,18 +193,27 @@ Enter this stage only after the user explicitly confirms `ppt-content-spec.md`.
 
 Treat icon decks as an asset library, never as template candidates.
 
-After the whole template is selected, read `design-taste.md` and state a one-line visual read. Infer `LAYOUT_VARIANCE`, `VISUAL_DENSITY`, and `VISUAL_ENERGY` from the audience, setting, content, trust requirements, brand, and selected template. Do not ask the user to tune these values unless two materially different visual directions remain plausible.
+## 10. PPTX only: per-page generative design route
 
-## 9. PPTX only: audit fonts and visual assets
+Enter this stage only after the user selects the per-page generative route. It is a deliberate art-direction workflow, not a shortcut around the content, evidence, privacy, or editability gates.
+
+Read and follow `generative-pptx.md` as the authoritative execution contract for this branch. At minimum:
+
+1. create `ppt-page-generation-spec.md` and a coherent deck-wide visual system;
+2. generate text-free 16:9 page visuals with safe editable-overlay zones and separable elements;
+3. approve the three-page sample before full-batch generation;
+4. deliver both the image-based and editable PPTX files after element decomposition, reconstruction, and cross-file verification.
+
+## 11. PPTX only: establish typography, visual assets, and design constraints
 
 - Select the typography profile before mapping content to layouts:
   - `projection` for lectures, competitions, training, medical reasoning, and auditorium delivery;
   - `meeting` for presales, product introductions, internal reporting, and conference-room delivery;
   - `compact` only for appendices, handouts, or explicitly approved dense reference pages.
-- Extract fonts used by the selected HiPPT template and any separately approved brand pack. Do not treat fonts from a content-only source deck as design candidates.
+- For the managed-template route, extract fonts used by the selected HiPPT template and any separately approved brand pack. For the per-page generative route, select installed or licensed fonts for the editable PPT overlay system; do not ask the image model to render typography. Do not treat fonts from a content-only source deck as design candidates.
 - Check installed families and weights.
 - Build an explicit role map for cover title, slide title, section heading, body, labels, data emphasis, and sources. Do not apply one undifferentiated family/weight to every text box.
-- Reject or remap layouts that require type below the selected profile's floor. Template fidelity never justifies unreadable projected text.
+- Reject or remap template layouts or generated compositions that require type below the selected profile's floor. Template or image fidelity never justifies unreadable projected text.
 - Use bundled fonts only when redistribution rights are documented.
 - Request approval before installing user-level fonts.
 - Define image, screenshot, chart, icon, search, and generation needs.
@@ -194,10 +224,10 @@ After the whole template is selected, read `design-taste.md` and state a one-lin
 - Inspect the source page and obtain the full-resolution asset. Never build a delivered slide from a search-result thumbnail.
 - Search with a bounded effort: normally try up to two well-formed query rounds per visual need and stop when a semantically suitable, sufficiently large, and legally usable asset is found.
 - Prefer official or primary sources for real entities, products, people, institutions, medical teaching material, publications, and events. Prefer clearly licensed stock or public-domain sources for generic decorative photography.
-- Use image generation only when a bespoke composition is materially useful, a safe and licensed search result is unavailable, privacy makes real imagery unsuitable, or the user explicitly requests generation.
-- Begin approved image search while template text and layout editing proceeds when the available tools permit concurrent work; do not block a code-editing fast path on unnecessary asset generation.
+- Use image generation only when a bespoke composition is materially useful, a safe and licensed search result is unavailable, privacy makes real imagery unsuitable, the user explicitly requests generated imagery, or the user has selected the per-page generative route.
+- Begin approved image search while template text and layout editing proceeds when the available tools permit concurrent work; do not block a code-editing fast path on unnecessary asset generation. The user-selected per-page generative route is a deliberate exception to the normal search-first default.
 
-## 10. PPTX only: build the three-slide sample
+## 12. PPTX only: build the three-slide sample
 
 Create:
 
@@ -205,11 +235,13 @@ Create:
 2. a representative content slide;
 3. a complex slide such as a process, data, comparison, or clinical-reasoning page.
 
-Review template fit, type, density, visual direction, and editability. Revise until the direction is approved.
+For the managed-template route, review template fit. For the per-page generative route, execute the three-page sample gate in `generative-pptx.md`. In both routes, review type, density, visual direction, contrast, factual boundary, element separability, and editability. Revise until the direction is explicitly approved.
 
-Use a suitable searched or explicitly approved existing asset for the cover when one is readily available. Do not delay the sample for AI generation merely to replace a searchable generic photograph or pattern.
+In the managed-template route, use a suitable searched or explicitly approved existing asset for the cover when one is readily available. Do not delay the sample for AI generation merely to replace a searchable generic photograph or pattern. In the per-page generative route, do not add page numbers to the sample, whether as generated pixels or editable PPT layers.
 
-## 11. PPTX only: build the full deck
+## 13. PPTX only: build the full deck and the generative image-based copy
+
+### Managed whole-template route
 
 - Clone or import the selected HiPPT managed template rather than recreating its visual language from scratch.
 - Rebuild source-deck content inside the selected template. Do not import the source deck's master, layouts, theme, decorative media, or slide geometry.
@@ -219,9 +251,22 @@ Use a suitable searched or explicitly approved existing asset for the cover when
 - Use generated full-slide visuals without baked-in text, logos, or page numbers.
 - Preserve the template's signature system while varying slide silhouettes according to content job. Do not repeat an exact layout on adjacent non-series slides, and avoid repeating one generic card layout throughout the deck.
 - Reuse layouts freely only when the pages are intentionally the same content class or series and repetition improves comparison, learning, or navigation.
-- Apply the palette, accent, shape, typography, icon, and image-treatment locks defined in `design-taste.md`.
 
-## 12. PPTX only: verify and deliver
+### Per-page generative route
+
+After explicit sample approval, execute the full-deck generation and image-based PPTX stage in `generative-pptx.md`. Preserve the text-free page visuals for decomposition, render the approved complete pages for `[deck-name]-image.pptx`, and do not add page numbers.
+
+Apply the palette, accent, shape, typography, icon, image-treatment, and overlay-safe-zone locks defined in `design-taste.md` and, for the per-page generative route, the page-generation specification.
+
+## 14. Per-page generative PPTX only: decompose every page into independent PNG elements
+
+Execute the element-decomposition stage in `generative-pptx.md`. Require one transparent PNG per separable non-text visual element, record exact placement in `ppt-element-manifest.json`, and return the PNGs directly in ordered batches when supported. Do not claim success when faithful separation cannot be verified.
+
+## 15. Per-page generative PPTX only: reconstruct the editable PPTX
+
+Execute the editable-reconstruction stage in `generative-pptx.md`. Build `[deck-name]-editable.pptx` from the element manifest and independent PNG objects, add native editable text and evidence-bearing objects, and compare every rendered page with `[deck-name]-image.pptx`. Never flatten the editable copy or add page numbers.
+
+## 16. PPTX only: verify and deliver
 
 After every meaningful change:
 
@@ -231,6 +276,9 @@ After every meaningful change:
 4. verify fonts and unexpected line wrapping;
 5. export final layout JSON and run `scripts/audit-typography.mjs --layout-dir <dir> --profile <projection|meeting|compact>`;
 6. export or inspect slide text and speaker notes, then run `node scripts/audit-language.mjs --input <text-or-inspect-file>` as an advisory review;
-7. verify evidence, citations, source labels, medical boundaries, and the meaning-preservation gate;
-8. reopen or reparse the final PPTX when possible;
-9. deliver the editable PPTX with a concise QA summary and any unresolved risks.
+7. for the per-page generative route, verify every text-free visual reference against its page-generation specification, every complete page render against the approved full-page design, every PNG against the element manifest, and every reconstructed slide against the corresponding image-based slide;
+8. confirm that `[deck-name]-image.pptx` contains exactly one complete full-slide image per slide, while `[deck-name]-editable.pptx` contains no flattened full-page render and all text and PNG visual elements are independently editable or selectable as specified;
+9. confirm that both per-page generative PPTX files have matching slide count, order, dimensions, approved content, and page-level visual hierarchy, and that neither file contains page numbers;
+10. verify evidence, citations, source labels, medical boundaries, and the meaning-preservation gate;
+11. reopen or reparse both final PPTX files when possible;
+12. deliver both PPTX files with a concise QA summary and any unresolved risks.
