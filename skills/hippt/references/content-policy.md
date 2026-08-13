@@ -1,5 +1,12 @@
 # Content policy
 
+## Contents
+
+1. Input provenance and content-confirmation package
+2. Format-neutral content contract and evidence status
+3. Meaning-preservation gate and source requirements
+4. Citation placement, density rules, and approval gate
+
 ## Input provenance and source precedence
 
 Treat every human statement and supplied file as an input with an explicit role. Do not merge all uploaded material into one undifferentiated source pool.

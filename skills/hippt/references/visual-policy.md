@@ -1,5 +1,13 @@
 # Visual sourcing and generation policy
 
+## Contents
+
+1. Priority order and visual plan
+2. Real evidence and image search
+3. AI-generated imagery and per-page generative PPTX
+4. Medical and privacy safeguards
+5. Charts, diagrams, icons, and asset records
+
 ## Priority order
 
 Use visual sources in this order:
@@ -78,7 +86,24 @@ AI imagery is not acceptable as evidence of:
 - regulatory approval, certification, publication, or official endorsement;
 - real people, institutions, or events unless explicitly and truthfully labeled as illustration.
 
-Generated full-slide visuals must not contain baked-in titles, body copy, logos, source labels, or page numbers. Add these later as editable PPT layers.
+Generated full-slide visuals must not contain baked-in titles, body copy, logos, source labels, or page numbers. Add the required content later as editable PPT layers; in the per-page generative PPTX route, do not add page numbers at all.
+
+## Per-page generative PPTX design
+
+When the user explicitly selects the per-page generative PPTX route, an image-generation model such as Image2 may create the visual composition for each page. This is an alternative design execution route, not an exemption from the approved `ppt-content-spec.md`, evidence, privacy, licensing, accessibility, or editability requirements.
+
+- Create and retain `ppt-page-generation-spec.md` before generation. It must map each approved page to a visual job, composition, editable-overlay safe zones, planned separable visual elements, prohibited elements, sensitive-information boundary, and prompt reference.
+- Treat every model-generated full-page output as a text-free visual reference for sample approval, full-deck generation, and later decomposition. It is not itself the complete presentation page. Use a separately rendered complete page image only in the image-based PPTX; never use a flattened full-page render in the editable PPTX.
+- Do not ask the model to render textual content, numbers, charts, tables, citations, logos, QR codes, UI labels, watermarks, or page numbers. For this route, do not add page numbers to the final deck either, including as editable PPT layers.
+- Use the page's approved narrative and visual plan to direct the composition, but do not represent a generated scene, interface, chart, person, institution, clinical image, outcome, or event as real evidence. Replace factual or evidence-bearing elements with approved screenshots, real editable charts, verified sources, or clearly labeled illustrations.
+- Generate at a full-slide 16:9 resolution suitable for the target delivery setting. Preserve uncluttered, high-contrast areas for editable PPT overlays; regenerate an image that forces unreadable copy or obscures required evidence.
+- Inspect every output before use. Reject or regenerate images with accidental or garbled text, pseudo-logos, false numerical detail, fake interfaces, watermarks, visual artifacts, unsafe identifiers, clinical or anatomical errors, misleading real-world implications, or inadequate resolution.
+- Preserve the accepted image file and generation record: model or service, model/version when available, date, prompt reference, controls or seed when available, output identifier, local path, checksum, privacy status, and usage-rights status.
+- Do not put confidential company details, unreleased product information, patient data, customer information, or other sensitive data into prompts sent to an external generation service without explicit authorization and an appropriate privacy basis.
+
+### Branch execution
+
+Read and follow `generative-pptx.md` for the mandatory sample gate, dual PPTX output contract, element decomposition, manifest, editable reconstruction, direct PNG batching, cross-file comparison, and blocking conditions. This file remains authoritative for visual admissibility, evidence boundaries, privacy, source records, and generated-asset quality.
 
 ## Medical and privacy safeguards
 

@@ -2,6 +2,13 @@
 
 Apply this file to the PPTX branch only. For HTML delivery, follow `html-mode.md` and use a separate web-native theme/component catalog. Do not mix PPTX masters or fixed source-slide geometry into HTML production.
 
+## Contents
+
+1. Architecture and template-source boundary
+2. Whole-template selection and recommendation procedure
+3. Template cards, brand priority, and internal slide mapping
+4. Asset-pack boundaries and failure behavior
+
 ## Architecture
 
 HiPPT uses two separately maintained components:
